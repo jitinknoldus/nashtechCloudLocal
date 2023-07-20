@@ -1,24 +1,24 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-card-component',
   templateUrl: './card-component.component.html',
   styleUrls: ['./card-component.component.css']
 })
-export class CardComponentComponent {
+export class CardComponentComponent implements OnInit{
 
-// @Input() cars = {}
+  @Input() carbrand:string="";
+  @Input() price:string="";
+  @Input() mileage:string="";
+  @Input() location:string="";
+  @Input() year:string="";
+  @Input() color:string="";
+  @Input() model:string="";
 
-  // constructor() {
-  // console.log(this.cars)
-  // }
 
-@Input() carCompanyName = '';
-@Input() carModel = '';
-@Input() carPrice:string = '';
-@Input() carMileage:string = '';
-@Input() manufacturingYear = '';
-@Input() carLocation = '';
-@Input() carColor:string = '';
+  constructor() {}
 
+  ngOnInit() {
+    console.log(); // The input properties are accessible here.
+  }
 }

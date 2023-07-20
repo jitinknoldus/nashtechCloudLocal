@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -6,11 +6,12 @@ import {HttpClient} from "@angular/common/http";
 })
 export class CarsListServiceService {
 
-  url = "https://my.api.mockaroo.com/vehicle.json?key=38898010";
-  constructor(private http:HttpClient) {
+  url = "https://my.api.mockaroo.com/jitin_cars_data.json?key=e579fe10&page=1&per_page=2";
+
+  constructor(private http: HttpClient) {
   }
 
-  carsList(){
+  carsList() {
     return this.http.get(this.url)
   }
 

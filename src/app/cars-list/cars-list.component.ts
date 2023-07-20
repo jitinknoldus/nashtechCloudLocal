@@ -10,32 +10,11 @@ import {CarsListServiceService} from "../carservice/cars-list-service.service";
 export class CarsListComponent {
 
   cars:any;
+
   constructor(private carsData:CarsListServiceService) {
     carsData.carsList().subscribe((data)=>{
-      console.log(data);
       this.cars = data;
+      console.log(this.cars)
     })
   }
-
-
-//   myCar{
-//     carCompany:
-// }
-
-
-
-
-  carCompanyName:string = "Mahindra"
-  carPrice:string = "12000$"
-  carModel:string = "Thar"
-  carMileage:string = "2018"
-  carLocation:string = "LosAngeles"
-  manufacturingYear:string = "2018"
-  carColor:string = "White"
-
-
-
-
-
-
 }
