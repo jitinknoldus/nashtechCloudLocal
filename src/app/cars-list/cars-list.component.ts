@@ -19,7 +19,15 @@ export class CarsListComponent {
       return this.pageNumber
     }
 
+  decreaseCount(){
+      if(this.pageNumber==1){
+        console.log("ALready on page 1")
 
+      }else{
+        this.pageNumber = this.pageNumber - 1;
+      }
+    return this.pageNumber;
+  }
 
 
     constructor(private carsData:CarsListService) {
@@ -29,8 +37,15 @@ export class CarsListComponent {
       })
     }
 
-  updatePageCount(){
+  nextPage(){
     let count = this.increaseCount();
+    this.carsData.getData(count).subscribe((data)=>{
+      this.cars = data;
+    })
+  }
+
+  previousPage(){
+    let count = this.decreaseCount();
     this.carsData.getData(count).subscribe((data)=>{
       this.cars = data;
     })

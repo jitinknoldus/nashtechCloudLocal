@@ -14,8 +14,13 @@ export class PaginationComponent {
   }
 
   increaseCount(){
-    this.carsData.updatePageCount();
+    this.carsData.nextPage();
     console.log(this.carsData.pageNumber);
+  }
+
+  decreaseCount(){
+    this.carsData.previousPage();
+    console.log(this.carsData.pageNumber)
   }
 
 }
