@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col"></div>
     <div class="col-sm-7 carsPage">
-
-      <!-- Car Company Name -->
       <h1>Car models</h1>
-
-
-      <div *ngFor="let car of cars">
+      <div *ngFor="let car of cars | paginate:{
+       itemsPerPage: tableSize,
+        currentPage: page,
+         totalItems: count
+       }; let i=index">
         <app-card-component
           [carbrand]="car.brand"
           [model]="car.model"
@@ -18,7 +18,14 @@
           [color]="car.color"
         />
       </div>
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      />
+
     </div>
     <div class="col"></div>
   </div>
+
 </div>
