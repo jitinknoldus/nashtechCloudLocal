@@ -7,49 +7,20 @@
       <h1>Mahindra Car Models</h1>
 
       <!-- Car models-->
-
-<!--      <app-card-component *ngFor="let car of cars"-->
-<!--      [car]-->
-
-
-<!--      />-->
-
-<!--          <app-card-component-->
-<!--          [cars]="cars"-->
-<!--          />-->
-
-
       <app-card-component
-      [carCompanyName] = "carCompanyName"
-      [carModel] = "carModel"
-      [carPrice]="carPrice"
-      [carMileage]= "carMileage"
-      [manufacturingYear] = "manufacturingYear"
-      [carLocation] = "carLocation"
-      [carColor]= "carColor"
+        *ngFor="let car of cars"
+      [carCompanyName] = "car.brand"
+      [carModel] = "car.model"
+      [carPrice]="car.carPrice"
+      [carMileage]= "car.mileage"
+      [manufacturingYear] = "car.year"
+      [carLocation] = "car.location"
+      [carColor]= "car.color"
       />
-<!--      -->
-<!--      <app-card-component-->
-<!--        [carCompanyName] = "carCompanyName"-->
-<!--        [carModel] = "carModel"-->
-<!--        [carPrice]="carPrice"-->
-<!--        [carMileage]= "carMileage"-->
-<!--        [manufacturingYear] = "manufacturingYear"-->
-<!--        [carLocation] = "carLocation"-->
-<!--        [carColor]= "carColor"-->
-<!--      />-->
 
-
-<!--      <app-card-component-->
-<!--        [carCompanyName] = "carCompanyName"-->
-<!--        [carModel] = "carModel"-->
-<!--        [carPrice]="carPrice"-->
-<!--        [carMileage]= "carMileage"-->
-<!--        [manufacturingYear] = "manufacturingYear"-->
-<!--        [carLocation] = "carLocation"-->
-<!--        [carColor]= "carColor"-->
-<!--      />-->
-
+      <div class="text-center my-5">
+        <app-pagination/>
+      </div>
     </div>
     <div class="col"></div>
   </div>

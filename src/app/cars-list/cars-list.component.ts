@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {CarsListServiceService} from "../carservice/cars-list-service.service";
+import {CarsListService} from "../carservice/cars-list.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-cars-list',
@@ -9,33 +10,11 @@ import {CarsListServiceService} from "../carservice/cars-list-service.service";
 
 export class CarsListComponent {
 
-  cars:any;
-  constructor(private carsData:CarsListServiceService) {
-    carsData.carsList().subscribe((data)=>{
-      console.log(data);
-      this.cars = data;
-    })
+    cars:any;
+    constructor(private carsData:CarsListService) {
+      carsData.carsList().subscribe((data)=>{
+        console.log(data);
+        this.cars = data;
+      })
+    }
   }
-
-
-//   myCar{
-//     carCompany:
-// }
-
-
-
-
-  carCompanyName:string = "Mahindra"
-  carPrice:string = "12000$"
-  carModel:string = "Thar"
-  carMileage:string = "2018"
-  carLocation:string = "LosAngeles"
-  manufacturingYear:string = "2018"
-  carColor:string = "White"
-
-
-
-
-
-
-}

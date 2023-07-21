@@ -9,13 +9,15 @@ import { CardComponentComponent } from './cars-list/card-component/card-componen
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CarsListComponent,
-    CardComponentComponent
+    CardComponentComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
