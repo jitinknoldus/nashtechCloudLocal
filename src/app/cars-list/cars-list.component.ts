@@ -11,10 +11,29 @@ import {HttpClient} from "@angular/common/http";
 export class CarsListComponent {
 
     cars:any;
+    pageNumber = 1;
+
+
+    increaseCount(){
+      this.pageNumber = this.pageNumber + 1;
+      return this.pageNumber
+    }
+
+
+
+
     constructor(private carsData:CarsListService) {
-      carsData.carsList().subscribe((data)=>{
+      carsData.getData(this.pageNumber).subscribe((data)=>{
         console.log(data);
         this.cars = data;
       })
     }
+
+  updatePageCount(){
+    let count = this.increaseCount();
+    this.carsData.getData(count).subscribe((data)=>{
+      this.cars = data;
+    })
+  }
+
   }
